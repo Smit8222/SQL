@@ -25,3 +25,11 @@ insert into marks values(9,	6,	6,	10,	7,	5),
 (9,	14,	17,	7,	14,	11);
 
 select * from marks;
+ALTER TABLE marks
+ADD RollNo INT;
+
+ALTER TABLE marks
+ADD CONSTRAINT fk_roll
+FOREIGN KEY (RollNo)
+REFERENCES student(RollNo);
+UPDATE marks SET RollNo = 2101001 WHERE DBSM=9 LIMIT 1;
